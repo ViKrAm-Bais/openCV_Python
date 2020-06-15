@@ -1,0 +1,54 @@
+Shape detection:
+Functions used in shape detection:
+
+
+1] findContours():
+     Syntax:
+contours,hierarchy	=	cv.findContours(	image, mode, method[, contours[, hierarchy[,offset]]]	)
+1.	Contours: each contours is stored as vectors of point
+2.	Mode: 
+3.	Methods : this are approximation methods 
+
+
+2]drawcontours():
+ Syntax:
+Cv2.drawContours(image,list of points,color,thickness)
+
+3]aproxPOLYDP()
+Syntax:
+  Imagearray=cv2.ployApproxPoly(imagearrayinput,double eclipson,bool closed)
+Eclipson=parameter representing the approximation of area input 
+Closed: wether the couve be closed or not
+
+
+
+drawing rectangle around contours:
+contours are the array of points surrounded by objects or shapes:
+we can draw points by following functions:
+
+1] cv2.boundingRect():
+Syntax: x,y,a,b=cv2.boundingRect(array)
+Array=array of keypoint or contours
+/// keypoint can be easily convert into array by array=cv2.Keypoint_convert(keypoints)
+
+2]cv2.boxPoint():
+Syntax : points=cv2.boxPoints(shape)
+box	The input rotated rectangle. It may be the output of 
+points	The output array of four vertices of rectangles. 
+for getting shape we can use shape=cv2.minAreaRect(array of all points of  shape)
+
+3]cv2.minAreaRect():
+Syntax:
+shape=cv2.minAreaRect(array of points of shape)
+It will return rectangle with minimum area weather it may be rotated
+There are few more function for getting shape https://docs.opencv.org/trunk/d3/dc0/group__imgproc__shape.html#ga3d476a3417130ae5154aea421ca7ead9
+
+//Whole implementation can be written as :
+//Let pt be points of shape or array conversion of keypoints
+shape=cv2.minAreaRect(pt)
+box=cv2.boxPoints(shape)
+//now we can convert the box into numpy array
+box=np.int0(box)
+cv2.drawCounters(image,[box],0,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
+this is how we can draw the rectangle
+
