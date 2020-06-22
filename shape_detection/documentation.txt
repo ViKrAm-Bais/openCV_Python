@@ -1,6 +1,5 @@
 Shape detection:
-Functions used in shape detection:
-
+Following are some Functions used in shape detection:
 
 1] findContours():
      Syntax:
@@ -19,8 +18,6 @@ Syntax:
   Imagearray=cv2.ployApproxPoly(imagearrayinput,double eclipson,bool closed)
 Eclipson=parameter representing the approximation of area input 
 Closed: wether the couve be closed or not
-
-
 
 drawing rectangle around contours:
 contours are the array of points surrounded by objects or shapes:
@@ -45,6 +42,7 @@ There are few more function for getting shape https://docs.opencv.org/trunk/d3/d
 
 //Whole implementation can be written as :
 //Let pt be points of shape or array conversion of keypoints
+
 shape=cv2.minAreaRect(pt)
 box=cv2.boxPoints(shape)
 //now we can convert the box into numpy array
