@@ -1,2 +1,2 @@
 # openCV_projects
-few programs for openCV python 
+few programs for openCV in python 
